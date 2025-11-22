@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Calculator } from './components/Calculator';
-import { ResultDisplay } from './components/ResultDisplay';
-import { ThemeToggle } from './components/ThemeToggle';
-import { useTheme } from './hooks/useTheme';
+import { Calculator } from './Calculator';
+import { ResultDisplay } from './ResultDisplay';
+import { ThemeToggle } from './ThemeToggle';
+import { useTheme } from './useTheme';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
