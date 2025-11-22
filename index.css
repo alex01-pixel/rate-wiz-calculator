@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #1e293b;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #334155;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #1e293b;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #334155;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .slider::-webkit-slider-thumb {
+  background: #cbd5e1;
+}
+
+.dark .slider::-webkit-slider-thumb:hover {
+  background: #e2e8f0;
+}
+
+.dark .slider::-moz-range-thumb {
+  background: #cbd5e1;
+}
+
+.dark .slider::-moz-range-thumb:hover {
+  background: #e2e8f0;
+}
