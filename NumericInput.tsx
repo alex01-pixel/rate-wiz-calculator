@@ -23,12 +23,26 @@ export function NumericInput({
   suffix = '',
   icon,
 }: NumericInputProps) {
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = parseFloat(e.target.value);
-    if (!isNaN(val)) {
-      onChange(Math.max(min, Math.min(max, val)));
-    }
-  };
+ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const inputStr = e.target.value;
+  
+  if (inputStr === '') {
+    // If the input is emptied, send 0 or simply stop to avoid errors, 
+    // but allow the field to visually clear.
+    // We will send 0 to ensure calculation runs without breaking.
+    onChange(0); 
+    return;
+  }
+  
+  const val = parseFloat(inputStr);
+  
+  if (!isNaN(val)) {
+    // Ensure value is within min/max bounds before updating state
+    onChange(Math.max(min, Math.min(max, val)));
+  }
+  // Note: If input is not a number (e.g., '10a'), we don't call onChange, 
+  // but we ensure the app doesn't crash.
+};
 
   return (
     <div>
